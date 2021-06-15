@@ -1,0 +1,117 @@
+:root{
+    --primary-color: #9D6E64;
+    --secondary-color: rgb(10, 79, 91);
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: var(--primary-color);
+        box-sizing: border-box;
+        color: #fff;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // justify-content: center;
+        height: 80vh;
+        h1{
+            margin: 20px 0 0;
+        }
+        .game-container{
+            height: 350px;
+            width: 450px;
+            position: relative;
+            margin: auto;
+            padding: 20px 30px;
+            .wrong-letters-container{
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                display: flex;
+                flex-direction: column;
+                text-align: right;
+                p{
+                    font-size: 20px;
+                    margin: 0 0 5px 0 ;
+                }
+                span{
+                    font-size: 25px;
+                }
+            }
+            .word{
+                display: flex;
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                // border: 2px solid red;
+                .letter{
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-bottom: 3px solid var(--secondary-color);
+                    font-size: 30px;
+                    margin: 0 3px;
+                    height: 50px;
+                    width: 20px;
+                }
+            }
+        }
+        .figure-container{
+            fill: transparent;
+            stroke: white;
+            stroke-width: 4px;
+            stroke-linecap: round;
+            .figure{
+                display: none;
+            }
+
+        }
+        .popup-container{
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0,0.3);
+            // display: flex;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            #popup{
+                background-color: rgb(10, 79, 91);
+                padding: 15px 20px;
+                text-align: center;
+                border-radius: 10px;
+                box-shadow: 0 5px 0 2px rgba(0,0,0,0.3);
+                .fa-smile-beam{
+                    color: rgb(243, 243, 70);
+                }
+                .btn-play-again{
+                    background-color: var(--primary-color);
+                    color: #fff;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    border: 0;
+                }.btn-play-again:active{
+                    transform: scale(0.98);
+                }
+            }
+        }
+        .notification-container{
+            background-color: rgba(0,0,0,0.3);
+            padding: 10px 15px;
+            border-radius: 15px 15px 0 0;
+            position: absolute;
+            bottom: -50px;
+            transition: transform 0.3s ease-in-out;
+            p{
+                margin: 0;
+            }
+        }
+        .show{
+            transform: translateY(-50px);
+        }
+
+    }
+}
+
